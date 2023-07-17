@@ -1,0 +1,21 @@
+{
+  // 타입스크립트 컴파일러에 포함될 함수들을 include 로 줄 수있음 / 여러개의 목록을 줄 수 있다.
+  "include": [
+    "src/**/*.ts" // scr 폴더에 전체 타입스크립트 파일들 명시
+  ],
+  "exclude": [
+    "node_modules" // 다른 node모듈을 설치하면 노드 패키지들을 타입스크립트 컴파일 대상으로 제외를 해준다.
+  ],
+  // 실제 타입스크립트 컨파일러에 대한 옵션들은  compilerOptions 라는 객체로 전달하게 된다.
+  "compilerOptions": {
+    "module": "ES6", // 컴파일 된 코드가 어떤 모듈 시스템을 사용할지 정의
+    "strict": true, // 모든 타입 체킹 옵션을 활성화한다는 것을 의미
+    "rootDir": "src", // 모듈에 root 가 되는 디렉토리를 src 로 준다.
+    "outDir": "dist", // 타입스크립트 컴파일된 파일들이 만들어지는 최상위 폴더 설정
+    "target": "ES6", // 컴파일 된 코드가 어떤 환경에서 실행 될 지 정의
+    "sourceMap": true, // ts 코드도 보고싶을 떄 사용
+    "removeComments": true, // js 로 변경할때 주석 제거
+    "noImplicitAny": true, // 함수에 파라미터에다 타입을 지정 하지 않게 되면 암시적으로 any 형태로 주게 되는데 그것을 방지하기 위해
+    "esModuleInterop": true // commonjs 모듈 형태로 이루어진 파일을 es2015 모듈 형태로 불러올 수 있게 해준다.
+  }
+}
